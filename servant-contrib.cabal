@@ -1,0 +1,43 @@
+name:                servant-contrib
+version:             0.0.0
+description:         Extra combinators and functions for Servant
+synopsis:            Extra combinators and functions for Servant
+homepage:            https://github.com/aelve/servant-contrib
+bug-reports:         https://github.com/aelve/servant-contrib/issues
+license:             BSD3
+license-file:        LICENSE
+author:              Artyom Kazak
+maintainer:          yom@artyom.me
+copyright:           2018 Artyom Kazak
+category:            Web
+build-type:          Simple
+extra-doc-files:     README.md
+                   , CHANGELOG.md
+cabal-version:       1.24
+tested-with:         GHC == 8.2.2, GHC == 8.4.3
+
+source-repository head
+  type:                git
+  location:            https://github.com/aelve/servant-contrib.git
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     ServantContrib
+                       
+  ghc-options:         -Wall
+  build-depends:       base
+                     
+  default-language:    Haskell2010
+  
+
+test-suite servant-contrib-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , servant-contrib
+                     
+  ghc-options:         -Wall -Werror -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+  
+
